@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         jdk  'default'
-        maven 'Default'
+        maven 'default'
     }
 
     stages {
