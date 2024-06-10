@@ -5,6 +5,15 @@ pipeline {
         maven 'default'
     }
 
+    parameters {
+            string(name: 'BRANCH', defaultValue: 'main', description: 'parameterized file',
+            defaultValue: 'marshmellow')
+        }
+
+        environment {
+            BUILD_NUMBER = "${env.BUILD_NUMBER}"
+        }
+
     stages {
         stage('Checkout') {
             steps {
@@ -20,6 +29,7 @@ pipeline {
 
         stage('Build') {
             steps {
+                    echo 'Building ${env.BUILD_NUMBER}...'
                 sh 'mvn clean package'
             }
         }
