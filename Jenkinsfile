@@ -6,8 +6,7 @@ pipeline {
     }
 
     parameters {
-            string(name: 'BRANCH', defaultValue: 'main', description: 'parameterized file',
-            defaultValue: 'marshmellow')
+            string(name: 'BRANCH', defaultValue: 'main', description: 'parameterized file', defaultValue: 'marshmellow')
         }
 
         environment {
@@ -29,7 +28,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                    echo 'Building ${env.BUILD_NUMBER}...'
+                echo 'Building ${env.BUILD_NUMBER}...'
                 sh 'mvn clean package'
             }
         }
