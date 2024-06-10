@@ -6,7 +6,7 @@ pipeline {
     }
 
     parameters {
-            string(name: 'BRANCH', defaultValue: 'main', description: 'parameterized file', defaultValue: 'marshmellow')
+            string(name: 'BRANCH', defaultValue: 'main', description: 'parameterized file')
         }
 
         environment {
